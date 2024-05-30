@@ -6,11 +6,11 @@ from keras.models import load_model
 from keras.preprocessing import image
 from PIL import Image, ImageOps
 
-icon_path = "C:\\Users\\Asus\\esophagitis_icon.ico"
+icon_path = "esophagitis_icon.ico"
 st.set_page_config(page_title="Esophagitis.AI", page_icon=icon_path)
 
 # Memuat model yang telah dilatih
-model = load_model('C:\\Users\\Asus\\noreso.h5')
+model = load_model('noreso.h5')
 
 def prediksi_gambar(file_path):
     class_names = open("noreso.txt", "r").readlines()
@@ -110,10 +110,10 @@ else:
                 col2.markdown(f'<p stye="text-align:left;">{caption2}</p>', unsafe_allow_html=True)
 
     images_info = [
-        {'path': 'C:\\Users\\Asus\\Documents\\Data\\ADOY\\word\\laporan bab 4\\accuracy_class.png','title': 'Accuracy Class', 'caption':'Tabel ini mendeteksi esophagitis mencapai akurasi 100% untuk esophagitis dan 89% untuk kondisi normal berdasarkan evaluasi terhadap 14 sampel esophagitis dan 18 sampel normal.'},
-        {'path': 'C:\\Users\\Asus\\Documents\\Data\\ADOY\\word\\laporan bab 4\\accuracy_epoch.png','title': 'Accuracy Epoch', 'caption':'Grafik menunjukkan bahwa model CNN mencapai akurasi tinggi dan stabil dengan cepat, mendekati 100% pada data pelatihan dan sekitar 90% pada data pengujian setelah beberapa epoch awal, tanpa tanda-tanda overfitting.'},
-        {'path': 'C:\\Users\\Asus\\Documents\\Data\\ADOY\\word\\laporan bab 4\\matrix.png','title': 'Confusion Matrix', 'caption':'Confussion Matriks ini menunjukkan bahwa model CNN mendeteksi esophagitis dengan sempurna (14/14) dan kondisi normal dengan sedikit kesalahan (16/18), menunjukkan performa akurasi yang tinggi.'},
-        {'path': 'C:\\Users\\Asus\\Documents\\Data\\ADOY\\word\\laporan bab 4\\loss_epoch.png','title': 'Loss Epoch', 'caption':'Grafik menunjukkan bahwa loss pada data pelatihan (garis biru) menurun tajam mendekati nol, sementara loss pada data pengujian (garis oranye) menurun pada awalnya tetapi kemudian stabil di sekitar 0.4, menunjukkan adanya kemungkinan overfitting setelah beberapa epoch.'},
+        {'path': 'accuracy_class.png','title': 'Accuracy Class', 'caption':'Tabel ini mendeteksi esophagitis mencapai akurasi 100% untuk esophagitis dan 89% untuk kondisi normal berdasarkan evaluasi terhadap 14 sampel esophagitis dan 18 sampel normal.'},
+        {'path': 'accuracy_epoch.png','title': 'Accuracy Epoch', 'caption':'Grafik menunjukkan bahwa model CNN mencapai akurasi tinggi dan stabil dengan cepat, mendekati 100% pada data pelatihan dan sekitar 90% pada data pengujian setelah beberapa epoch awal, tanpa tanda-tanda overfitting.'},
+        {'path': 'matrix.png','title': 'Confusion Matrix', 'caption':'Confussion Matriks ini menunjukkan bahwa model CNN mendeteksi esophagitis dengan sempurna (14/14) dan kondisi normal dengan sedikit kesalahan (16/18), menunjukkan performa akurasi yang tinggi.'},
+        {'path': 'loss_epoch.png','title': 'Loss Epoch', 'caption':'Grafik menunjukkan bahwa loss pada data pelatihan (garis biru) menurun tajam mendekati nol, sementara loss pada data pengujian (garis oranye) menurun pada awalnya tetapi kemudian stabil di sekitar 0.4, menunjukkan adanya kemungkinan overfitting setelah beberapa epoch.'},
     ]
     for i in range(0, len(images_info), 2):
         if i + 1 < len(images_info):
