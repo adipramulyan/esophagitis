@@ -1,0 +1,6 @@
+opencv-python-headless
+keras==2.14.0
+tensorflow==2.14.0
+numpy
+pandas
+streamlit
